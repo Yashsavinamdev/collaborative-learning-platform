@@ -6,10 +6,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
-  { path: '/', component: HomeComponent },
-  { path: '/login', component: LoginComponent },
-  { path: '/dashboard', component: DashboardComponent },
-  { path: '/register', component: RegisterComponent },
+  { path: '', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'register', component: RegisterComponent },
 ];
 
 @NgModule({
