@@ -6,13 +6,15 @@ import jwt from 'jsonwebtoken';
 export const register = async (req: Request, res: Response): Promise<void> => {
   try {
     const { username, email, password } = req.body;
-    const hashedPassword = await bcrypt.hash(password, 10);
-    const newUser = new User({ username, email, password: hashedPassword });
+    // const hashedPassword = await bcrypt.hash(password, 10);
+    // const newUser = new User({ username, email, password: hashedPassword });
+    const newUser = new User({ username, email, password });
     await newUser.save();
     res.status(201).json('User registered!');
   } catch (err) {
     if (err instanceof Error) {
       res.status(400).json('Error: ' + err.message);
+      console.log(err.message);
     } else {
       res.status(400).json('An unknown error occurred');
     }
